@@ -1,16 +1,10 @@
 import java.util.Random;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author Dell
  */
-public class Employeewage
+public class Employeewage 
 {
     static void Employeewage() 
     {
@@ -23,12 +17,14 @@ public class Employeewage
         int monthlywage=0;
         int isFullTime= 1;
         int isPartTime= 0;
+        int totalworkingdays=0;
+        int totalworkinghours=0;
         int empHr=0;
 //        if (randomValue== 1) 
          
-            for(int i=0; i<=20; i++)
+            while(totalworkingdays<20 && totalworkinghours<100)
             {
-                System.out.println("For Day '"+i+"'");
+//                System.out.println("For Day '"+i+"'");
             
             int presentemp= r.nextInt() % 3;
             switch(presentemp)
@@ -36,17 +32,22 @@ public class Employeewage
                 
             case 0: int halfdaywage= fulldaywage/2;
             System.out.println("Employee is Present and thus wage is '"+halfdaywage+"'");
-                empHr=4;
+            empHr=4;
+            totalworkingdays=totalworkingdays + 1;
+            totalworkinghours=totalworkinghours+empHr;
+                
                 break;
-            case 1: System.out.println("Employee is Present for full day and thus wage is '"+fulldaywage+"'");
+            case 1: System.out.println("Employee is Present for fullday, thus wage is '"+fulldaywage+"'");
                 empHr=8;
-                break;
-            case 2: System.out.println("Employee is Absent so No wage");
-                 empHr=0;
-                break;            
+            totalworkingdays=totalworkingdays + 1;
+            totalworkinghours=totalworkinghours+empHr;
+                
+            break;
             default: System.out.println("Employee is Absent so No wage");
             empHr=0;
-                break;
+                totalworkingdays=totalworkingdays + 1;
+            totalworkinghours=totalworkinghours+empHr;
+            break;
             }
             
             dailywage= empHr * wage_per_hour;
@@ -55,13 +56,12 @@ public class Employeewage
 
         
             }
-       System.out.println(" Total Monthly wage is '"+monthlywage+"'");     
-
-        
+       System.out.println(" MOnthly wage is '"+monthlywage+"'");     
+       System.out.println(" Total Working Days '"+totalworkingdays+"'");
+       System.out.println(" Total Working hours '"+totalworkinghours+"'"); 
     }
 
     public static void main(String[] args) {
         Employeewage();
     }
 }
-
