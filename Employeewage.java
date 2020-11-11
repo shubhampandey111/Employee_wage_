@@ -4,8 +4,8 @@ import java.util.Random;
  *
  * @author Dell
  */
-public class Employeewage {
-
+public class Employeewage
+{
     static void Employeewage() 
     {
         Random r= new Random();
@@ -18,28 +18,27 @@ public class Employeewage {
         if (randomValue== 1) 
         {
             int presentemp= r.nextInt() % 3;
-            if (presentemp== isPartTime) 
+            switch(presentemp)
             {
-                int halfdaywage= fulldaywage/2;
+                
+            case 0: int halfdaywage= fulldaywage/2;
                 System.out.println("Employee is Present and thus wage is '"+halfdaywage+"'");
-
+                break;
+            case 1: System.out.println("Employee is Present and thus wage is '"+fulldaywage+"'");
+                break;
+            default: System.out.println("Employee is Absent so No wage");
+                break;
             }
-            if (presentemp== isFullTime) 
-            {
-
-                System.out.println("Employee is Present and thus wage is '"+fulldaywage+"'");
-
-            }
-            
-            
         }
-        else {
-                System.out.println("Employee is Absent so No wage");
-            }
-
+        else
+        {
+            System.out.println("Employee is Absent so No wage");
+        }
+        
     }
 
     public static void main(String[] args) {
         Employeewage();
     }
 }
+
