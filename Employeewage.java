@@ -6,34 +6,27 @@ import java.util.Random;
  */
 public class Employeewage
 {
-     static void Employeewage()
+    static void Employeewage()
      {
          Random r = new Random();
          int randomValue= r.nextInt() % 2;
-         if(randomValue==1)
+         int wage_per_hour= 20;
+         int full_day_hour= 8;
+         int fulldaywage= wage_per_hour * full_day_hour;
+         if(randomValue== 1)
         {
-            System.out.println(" Employee is Present ");
+            
+            System.out.println(" Employee is Present and thus wage is '"+fulldaywage+"'");
         }
         else
         {
-            System.out.println("Employee is Absent");
+            System.out.println("Employee is Absent so No wage");
         }
      }
-     
-     
-     
-     
-     
-     
     
-
-    public static void main(String[] args) 
-    {
+    
+    public static void main(String[] args) {
         Employeewage();
-        
     }
-
-
-
 }
 
