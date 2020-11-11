@@ -6,7 +6,7 @@ import java.util.Random;
  */
 public class Employeewage 
 {
-    static void Employeewage() 
+    public void Employeewage() 
     {
         Random r= new Random();
         int randomValue= r.nextInt() % 2;
@@ -62,6 +62,7 @@ public class Employeewage
     }
 
     public static void main(String[] args) {
-        Employeewage();
+     Employeewage ew= new Employeewage();
+        ew.Employeewage();
     }
 }
